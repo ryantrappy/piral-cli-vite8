@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.1 (tbd)
+## 1.0.1
 
 - Fixed `require()` of shared dependencies from CommonJS code in pilets
 
