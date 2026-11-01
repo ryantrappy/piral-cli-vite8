@@ -1,3 +1,4 @@
+import { esmExternalRequirePlugin } from 'vite';
 import type { PiletBuildHandler } from 'piral-cli';
 
 import pilet from '../plugins/pilet.js';
@@ -92,11 +93,14 @@ const handler: PiletBuildHandler = {
             },
             entryFileNames: '[name].js',
           },
-          external,
         },
       },
       plugins: [
         ...config.plugins,
+        // externals are declared here instead of in `rollupOptions.external`: Rolldown otherwise
+        // keeps `require()` calls to them (e.g., `require('react')` in react/jsx-runtime), which
+        // throw at runtime since SystemJS does not provide `require`
+        esmExternalRequirePlugin({ external }),
         pilet({
           id,
           schema,
