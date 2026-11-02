@@ -14,7 +14,7 @@ The `piral-cli` plugin for using `vite` (**version 8**) as bundler.
 * 🌍 [Website](https://piral.io/) - learn more about Piral
 * 📖 [Documentation](https://docs.piral.io/) - everything to get started and master micro frontends
 * 🉐 **Help translating Piral!** - making PRs in the [documentation branch](https://github.com/smapiot/piral/tree/documentation)
-* 🐞 [Issue Tracker](https://github.com/smapiot/piral/issues) - report bugs or suggest new features
+* 🐞 [Issue Tracker](https://github.com/smapiot/piral-cli-vite8/issues) - report bugs or suggest new features
 * 🗨 [Forums](https://stackoverflow.com/questions/tagged/piral) - use the community support on StackOverflow
 * 👪 [Community Chat](https://discord.gg/kKJ2FZmK8t) - ask questions and provide answers in our Discord server
 
