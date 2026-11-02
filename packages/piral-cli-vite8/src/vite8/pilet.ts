@@ -1,7 +1,6 @@
 import type { PiletBuildHandler } from 'piral-cli';
 
 import pilet from '../plugins/pilet.js';
-import minify from '../plugins/minify.js';
 import systemjs from '../plugins/systemjs.js';
 import { createCommonConfig } from './common.js';
 import { runVite } from './bundler-run.js';
@@ -83,6 +82,15 @@ const handler: PiletBuildHandler = {
           input,
           output: {
             ...config.build.rollupOptions.output,
+            ...(config.build.minify
+              ? {
+                  minify: {
+                    compress: true,
+                    mangle: true,
+                    codegen: true,
+                  },
+                }
+              : {}),
             assetFileNames(assetInfo) {
               // keep name of combined stylesheet
               if (assetInfo.name === 'style.css') {
@@ -107,7 +115,6 @@ const handler: PiletBuildHandler = {
           debug: options.develop,
         }),
         systemjs,
-        minify,
       ],
       debug: options.watch,
       outFile: options.outFile,
